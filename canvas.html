@@ -5,20 +5,27 @@
   <head>
     <meta charset="utf-8"/>
     <script>
+     function init(){
+          var canvas, ctx, video,angle;
+          canvas = document.querySelector("#myCanvas");
+          ctx = canvas.getContext("2d");
+        
+          video;
+            
+          angle = 0;
+
+            
+          video = document.getElementById('sourcevid');
+               
+          setInterval("processFrame()", 25);
      
+     }
    
      window.onload = function(){
        var canvas, ctx, imageObj,video,angle;
        canvas = document.querySelector("#myCanvas");
         ctx = canvas.getContext("2d");
-        video;
-            
-             angle = 0;
-
-            
-                video = document.getElementById('sourcevid');
-               
-                setInterval("processFrame()", 25);
+        
                    
         
        imageObj = new Image();
@@ -75,7 +82,7 @@
     </script>
   </head>
   
-  <body>
+  <body onload="init()">
     
     <canvas id ="myCanvas" width="500" height="500"></canvas>
     <video id="sourcevid" width ="100" height="100"autoplay loop>
