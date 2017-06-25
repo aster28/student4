@@ -17,9 +17,7 @@
 
             
                 video = document.getElementById('sourcevid');
-                canvas = document.getElementById('myCanvas');
-                ctx = canvas.getContext('2d');
-
+               
                 setInterval("processFrame()", 25);
             
        
@@ -51,7 +49,7 @@
 
                 // Comment these 4 lines if you uncommented the previous one
                
-               ctx.drawImage(video, 200, 0, 160, 90);
+               ctx.drawImage(video, 200, 200, 160, 90);
                 drawRotatingVideo(480, 90);
 
                
