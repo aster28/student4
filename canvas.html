@@ -15,10 +15,7 @@
         
         </style>
         <script>
-     
-   
-     window.onload = function(){   
-           var canvas, ctx, imageObj,video,angle;
+        var canvas, ctx, imageObj,video,angle;
        canvas = document.querySelector("#myCanvas");
         ctx = canvas.getContext("2d");
         angle = 0;
@@ -27,6 +24,13 @@
           video = document.getElementById('sourcevid');
                
           setInterval("processFrame()", 25);
+                   
+   
+     window.onload = function(){   
+           var canvas, ctx, imageObj,video,angle;
+       canvas = document.querySelector("#myCanvas");
+        ctx = canvas.getContext("2d");
+        
                    
         
        imageObj = new Image();
