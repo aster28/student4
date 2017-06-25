@@ -19,11 +19,14 @@
                    
    
      window.onload = function(){   
+          video = document.getElementById('sourcevid');
            var canvas, ctx, imageObj,video,angle;
+       
        canvas = document.querySelector("#myCanvas");
         ctx = canvas.getContext("2d");
         
-                   
+        setInterval("processFrame()", 25);
+           
         
        imageObj = new Image();
        imageObj.onload = function(){
@@ -46,12 +49,46 @@
         imageObj.src=" http://i.imgur.com/uL7Sa3G.jpg ";
      
      }
-   
+    function processFrame() {
+
+                // Uncomment next line for drawing 100% copy of the video content
+                //ctx.drawImage(video, 0, 0);
+
+                // Comment these 4 lines if you uncommented the previous one
+                ctx.drawImage(video, 0, 0, 320, 180);
+
+                drawRotatingVideo(480, 90);
+
+                ctx.drawImage(video, 0, 180, 320, 180);
+                ctx.drawImage(video, 320, 180, 320, 180);
+            }
+
+            function drawRotatingVideo(x, y) {
+                // Clear thze zone at the top right quarter of the canvas
+                ctx.clearRect(320, 0, 320, 180);
+
+                // We are going to change the coordinate system, save the context !
+                ctx.save();
+                // translate, rotate and recenter the image at its "real" center, 
+                //not the top left corner
+                ctx.translate(x, y);
+                ctx.rotate(angle += 0.01);
+                ctx.translate(-80, -45);
+
+                ctx.drawImage(video, 0, 0, 160, 90);
+
+                // restore the context
+                ctx.restore();
+
+            }
     </script>
   </head>
   
   <body >
-    
+    <video id="sourcevid" autoplay loop>
+            <source src="assignment.mp4" type="video/mp4" />
+            <source src="http://mainline.i3s.unice.fr/mooc/BigBuckBunny_640x360.ogv" type="video/ogg"/>
+        </video>
     <canvas id ="myCanvas" width="500" height="500"></canvas>
     
   </body>
