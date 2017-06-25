@@ -21,19 +21,19 @@
            var canvas, ctx, imageObj,video,angle;
        canvas = document.querySelector("#myCanvas");
         ctx = canvas.getContext("2d");
-        
+        angle = 0;
+
+            
+          video = document.getElementById('sourcevid');
+               
+          setInterval("processFrame()", 25);
                    
         
        imageObj = new Image();
        imageObj.onload = function(){
        
                       
-          angle = 0;
-
-            
-          video = document.getElementById('sourcevid');
-               
-          setInterval("processFrame()", 25);
+          
        
         ctx.drawImage(imageObj,150,50);
         ctx.font = "60pt Calibri";
