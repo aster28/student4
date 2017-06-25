@@ -50,12 +50,11 @@
                 //ctx.drawImage(video, 0, 0);
 
                 // Comment these 4 lines if you uncommented the previous one
-                ctx.drawImage(video, 0, 0, 320, 180);
+               
 
                 drawRotatingVideo(480, 90);
 
-                ctx.drawImage(video, 0, 180, 320, 180);
-                ctx.drawImage(video, 320, 180, 320, 180);
+               
             }
 
             function drawRotatingVideo(x, y) {
@@ -70,7 +69,7 @@
                 ctx.rotate(angle += 0.01);
                 ctx.translate(-80, -45);
 
-                ctx.drawImage(video, 0, 0, 160, 90);
+                ctx.drawImage(video, 200, 0, 160, 90);
 
                 // restore the context
                 ctx.restore();
