@@ -9,10 +9,12 @@
        var canvas, ctx, imageObj;
        canvas = document.querySelector("#myCanvas");
        ctx = canvas.getContext("2d");
-       ctx.fillText("Hello World",10,60);
+       
        ctx.lineWidth =3;
        ctx.fillStyle="yellow";
        ctx.strokeStyle="red";
+       ctx.fillText("Hello World",10,60);
+       ctx.strokeText("Hello World",10,60);
        imageObj = new Image();
        imageObj.onload = function(){
        
