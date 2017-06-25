@@ -5,21 +5,21 @@
   <head>
     <meta charset="utf-8"/>
     <script>
-      var canvas=document.getElementById('myCanvas');
-      var context=canvas.getContext('2d');
-
-    context.font = "60pt Calibri";
-    context.lineWidth = 3;
-    context.strokeStyle = "blue";
-    context.fillStyle = "red";
-  
-    context.fillText("Hello World!", 10, 100);
-    context.strokeText("Hello World!", 10, 100);
-
+     
+   
      window.onload = function(){
        var canvas, ctx, imageObj;
        canvas = document.querySelector("#myCanvas");
-       ctx = canvas.getContext("2d");
+        ctx = canvas.getContext("2d");
+        ctx.font = "60pt Calibri";
+       ctx.lineWidth = 3;
+       ctx.strokeStyle = "blue";
+       ctx.fillStyle = "red";
+  
+       ctx.fillText("Hello World!", 10, 100);
+       ctx.strokeText("Hello World!", 10, 100);
+
+      
        
        
        imageObj = new Image();
