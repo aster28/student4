@@ -15,15 +15,7 @@
         
         </style>
         <script>
-        var canvas, ctx, imageObj,video,angle;
-       canvas = document.querySelector("#myCanvas");
-        ctx = canvas.getContext("2d");
-        angle = 0;
-         
-            
-          video = document.getElementById('sourcevid');
-               
-          setInterval("processFrame()", 25);
+        
                    
    
      window.onload = function(){   
@@ -54,39 +46,7 @@
         imageObj.src=" http://i.imgur.com/uL7Sa3G.jpg ";
      
      }
-    function processFrame() {
-
-                // Uncomment next line for drawing 100% copy of the video content
-                //ctx.drawImage(video, 0, 0);
-
-                // Comment these 4 lines if you uncommented the previous one
-               
-                ctx.drawImage("Hello world", 0, 0, 160, 90);
-                drawRotatingVideo(480, 90);
-                
-
-            
-                
-            }
-
-            function drawRotatingVideo(x, y) {
-                // Clear thze zone at the top right quarter of the canvas
-                ctx.clearRect(320, 0, 320, 180);
-
-                // We are going to change the coordinate system, save the context !
-                ctx.save();
-                // translate, rotate and recenter the image at its "real" center, 
-                //not the top left corner
-                ctx.translate(x, y);
-                ctx.rotate(angle += 0.01);
-                ctx.translate(-80, -45);
-                ctx.drawImage("Hello World", 0, 0, 160, 90);
-                
-
-                // restore the context
-                ctx.restore();
-
-            }
+   
     </script>
   </head>
   
