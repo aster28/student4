@@ -47,6 +47,7 @@
       ctx.strokeStyle = "blue";
       ctx.fillStyle = "red";
         ctx.rotate(angle);
+        setShadow();
        ctx.fillText("Hello World!", 50, 150,100);
        ctx.strokeText("Hello World!",50, 150,100);
         
@@ -56,7 +57,7 @@
      
         imageObj.src=" http://i.imgur.com/uL7Sa3G.jpg ";
       setInterval("processFrame()", 25); 
-       setShadow();
+       
       
      }
     function processFrame() {
