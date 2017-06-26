@@ -55,7 +55,6 @@
          ctx.drawImage(imageObj,200,100);
          
        }
-
        
         imageObj.src=" http://i.imgur.com/uL7Sa3G.jpg ";
       setInterval("processFrame()", 25); 
@@ -86,7 +85,7 @@
              monsterX %= canvas.width
              monsterAngle+= 0.01;
    // call again mainloop after 20ms
-             requestId = setTimeout(animationLoop, 20);
+             setTimeout(animationLoop, 20);
  }   
             function drawRotatingVideo(x, y) {
                 // Clear thze zone at the top right quarter of the canvas
