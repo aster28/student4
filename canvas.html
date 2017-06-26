@@ -64,7 +64,7 @@
      }
     function processFrame() {
                 // Uncomment next line for drawing 100% copy of the video content
-                //ctx.drawImage(video, 0, 0);
+               //ctx.drawImage(video, 0, 0);
 
                 // Comment these 4 lines if you uncommented the previous one
 
@@ -91,8 +91,8 @@
          ctx.save();
           ctx.translate(x,y);
           ctx.font = "60pt Calibri";
-          ctx.fillText("Hello world",50,150,100);
-          ctx.StrokeText("Hello world",50,150,100);
+          ctx.fillText("Hello world",150,100,100);
+          ctx.StrokeText("Hello world",150,100,100);
           ctx.strokeStyle=Red;
           ctx.fillStyle=Blue;
           ctx.restore();
@@ -131,7 +131,7 @@
             <source src="http://mainline.i3s.unice.fr/mooc/BigBuckBunny_640x360.ogv" type="video/ogg"/>
       
         </video>
-    <canvas id ="myCanvas" width="550" height="300"></canvas>
+    <canvas id ="myCanvas" width="650" height="300"></canvas>
     
   </body>
 </html>
