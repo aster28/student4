@@ -58,7 +58,7 @@
        
         imageObj.src=" http://i.imgur.com/uL7Sa3G.jpg ";
       setInterval("processFrame()", 25); 
-       translate(monsterX,monsterY);
+       
         requestAnimationFrame(animationLoop);
     
       
@@ -69,7 +69,8 @@
                 //ctx.drawImage(video, 0, 0);
 
                 // Comment these 4 lines if you uncommented the previous one
-               
+
+     
 
                 drawRotatingVideo(480, 90);
 
@@ -79,7 +80,7 @@
    // 1 - Clear
              ctx.clearRect(0, 0, canvas.width, canvas.height);
    // 2 Draw
-           ctx.fillText("Hello world",100,50,100);
+              drawMonster(monsterX,monsterY,"red","blue")
    // 3 Move
              monsterX += 10;
              monsterX %= canvas.width
@@ -87,6 +88,15 @@
    // call again mainloop after 20ms
              setTimeout(animationLoop, 20);
  }   
+       function drawMonster(x,y,Red,Blue){
+         ctx.save();
+          translate(x,y);
+          ctx.fillText("Hello world",100,50,100);
+          ctx.StrokeText("Hello world",100,50,100);
+          ctx.strokeStyle=Red;
+          ctx.fillStyle=Blue;
+          ctx.restore();
+       }
             function drawRotatingVideo(x, y) {
                 // Clear thze zone at the top right quarter of the canvas
                 ctx.clearRect(320, 0, 320, 180);
