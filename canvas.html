@@ -60,7 +60,7 @@
       setInterval("processFrame()", 25); 
        translate(monsterX,monsterY);
         requestAnimationFrame(animationLoop);
-   
+    
       
      }
     function processFrame() {
@@ -79,7 +79,7 @@
    // 1 - Clear
              ctx.clearRect(0, 0, canvas.width, canvas.height);
    // 2 Draw
-           
+           ctx.fillText("Hello world",100,50,100);
    // 3 Move
              monsterX += 10;
              monsterX %= canvas.width
