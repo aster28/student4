@@ -22,18 +22,21 @@
           }
         </style>
       <script>
-        
+     
+           var canvas, ctx, imageObj,video,angle;
+          var monsterX=100, monsterY=100, monsterAngle=0;
+              
                    
    
      window.onload = function(){   
-          video = document.getElementById('sourcevid');
-           var canvas, ctx, imageObj,video,angle;
-       
+         
+        video = document.getElementById('sourcevid');
        canvas = document.querySelector("#myCanvas");
         ctx = canvas.getContext("2d");
         angle= Math.PI/10;
-        
-           
+        translate(monsterX,monsterY);
+        requestAnimationFrame(animationLoop);
+   
         
        imageObj = new Image();
        imageObj.onload = function(){
@@ -54,7 +57,8 @@
          ctx.drawImage(imageObj,200,100);
          
        }
-     
+
+       
         imageObj.src=" http://i.imgur.com/uL7Sa3G.jpg ";
       setInterval("processFrame()", 25); 
        
@@ -73,7 +77,18 @@
                 ctx.drawImage(video, 0, 180, 320, 180);
                 ctx.drawImage(video, 320, 180, 320, 180);
             }
-
+           function animationLoop() {
+   // 1 - Clear
+             ctx.clearRect(0, 0, canvas.width, canvas.height);
+   // 2 Draw
+           
+   // 3 Move
+             monsterX += 10;
+             monsterX %= canvas.width
+             monsterAngle+= 0.01;
+   // call again mainloop after 20ms
+             requestId = setTimeout(animationLoop, 20);
+ }   
             function drawRotatingVideo(x, y) {
                 // Clear thze zone at the top right quarter of the canvas
                 ctx.clearRect(320, 0, 320, 180);
