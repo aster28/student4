@@ -32,7 +32,7 @@
        canvas = document.querySelector("#myCanvas");
         ctx = canvas.getContext("2d");
         angle= Math.PI/10;
-        
+         setShadow();
            
         
        imageObj = new Image();
@@ -42,7 +42,8 @@
               
         ctx.drawImage(imageObj,100,50);
         ctx.font = "60pt Calibri";
-       ctx.lineWidth = 3;
+
+        ctx.lineWidth = 3;
       ctx.strokeStyle = "blue";
       ctx.fillStyle = "red";
         ctx.rotate(angle);
@@ -88,6 +89,12 @@
                 ctx.restore();
 
             }
+       function setShadow() {
+            ctx.shadowColor = "Grey"; // color
+           ctx.shadowBlur = 20;           // blur level
+           ctx.shadowOffsetX = 15;        // horizontal offset
+           ctx.shadowOffsetY = 15;        // vertical offset
+}
     </script>
   </head>
   
