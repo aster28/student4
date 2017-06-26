@@ -32,7 +32,7 @@
        canvas = document.querySelector("#myCanvas");
         ctx = canvas.getContext("2d");
         angle= Math.PI/10;
-         setShadow();
+        
            
         
        imageObj = new Image();
@@ -55,7 +55,9 @@
        }
      
         imageObj.src=" http://i.imgur.com/uL7Sa3G.jpg ";
-      setInterval("processFrame()", 25);  
+      setInterval("processFrame()", 25); 
+       setShadow();
+      
      }
     function processFrame() {
 
