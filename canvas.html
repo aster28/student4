@@ -39,7 +39,7 @@
        imageObj = new Image();
        imageObj.onload = function(){
        
-                      
+                     
               
         ctx.drawImage(imageObj,100,50);
         ctx.font = "60pt Calibri";
@@ -53,8 +53,7 @@
        ctx.strokeText("Hello World!",50, 150,100);
         
          ctx.drawImage(imageObj,200,100);
-         
-       }
+                }
        
         imageObj.src=" http://i.imgur.com/uL7Sa3G.jpg ";
       setInterval("processFrame()", 25); 
@@ -81,6 +80,7 @@
    // 2 Draw
               drawMonster(monsterX,monsterY,"red","blue");
    // 3 Move
+            drawMon(monsterX,monsterY,"red","blue")
              monsterX += 10;
              monsterX %= canvas.width
              monsterAngle+= 0.01;
@@ -89,9 +89,18 @@
  }   
        function drawMonster(x,y,Red,Blue){
          ctx.save();
+          ctx.translate(x,y);
+          ctx.fillText("Hello world",50,150,100);
+          ctx.StrokeText("Hello world",50,150,100);
+          ctx.strokeStyle=Red;
+          ctx.fillStyle=Blue;
+          ctx.restore();
+       }
+       function drawMon(x,y,Red,Blue){
+         ctx.save();
           translate(x,y);
-          ctx.fillText("Hello world",150,150,100);
-          ctx.StrokeText("Hello world",150,150,100);
+          ctx.fillRect(35,30,20,20);
+
           ctx.strokeStyle=Red;
           ctx.fillStyle=Blue;
           ctx.restore();
