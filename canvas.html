@@ -64,7 +64,6 @@
       
      }
     function processFrame() {
-
                 // Uncomment next line for drawing 100% copy of the video content
                 //ctx.drawImage(video, 0, 0);
 
@@ -80,7 +79,7 @@
    // 1 - Clear
              ctx.clearRect(0, 0, canvas.width, canvas.height);
    // 2 Draw
-              drawMonster(monsterX,monsterY,"red","blue")
+              drawMonster(monsterX,monsterY,"red","blue");
    // 3 Move
              monsterX += 10;
              monsterX %= canvas.width
@@ -91,8 +90,8 @@
        function drawMonster(x,y,Red,Blue){
          ctx.save();
           translate(x,y);
-          ctx.fillText("Hello world",100,50,100);
-          ctx.StrokeText("Hello world",100,50,100);
+          ctx.fillText("Hello world",150,150,100);
+          ctx.StrokeText("Hello world",150,150,100);
           ctx.strokeStyle=Red;
           ctx.fillStyle=Blue;
           ctx.restore();
